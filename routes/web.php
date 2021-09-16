@@ -13,4 +13,4 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('produtos', 'ControleProdutos@index')->name('produtos.index')
+Route::get('produtos', 'ControleProdutos@index')->name('produtos.index');
