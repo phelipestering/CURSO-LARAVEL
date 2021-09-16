@@ -4,11 +4,10 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 
-class TesteController extends Controller
+class ControleProdutos extends Controller
 {
     public function index()
     {
         return 'Lista de Produtos';
     }
 }
-
