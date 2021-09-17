@@ -13,4 +13,12 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('produtos', 'ControleProdutos@index')->name('produtos.index');
+use App\Http\Controllers\ControleProdutos;
+
+Route::get('produtos', [ControleProdutos::class, 'index'])->name('produtos.index');
+
+
+Route::get('/', function () {
+    return view('welcome');
+});
+
