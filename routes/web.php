@@ -14,7 +14,7 @@ use Illuminate\Support\Facades\Route;
 */
 
 use App\Http\Controllers\ControleProdutos;
-
+use App\Http\Controllers\ProductController;
 
 // inserindo rotas para crud
 
@@ -30,7 +30,19 @@ Route::get('produtos', [ControleProdutos::class, 'store'])->name('produtos.store
 
 // do jeito mais facinho....
 
-Route::resource('produtos', ControleProdutos::class);
+Route::resource('produtos', ProductController::class);
+
+/*
+
+php artisan make:controller ProductController --resource
+
+esse comando cria controler com todas as rotas de crud necessarias
+
+
+
+
+
+*/
 
 Route::get('/', function () {
     return view('welcome');
