@@ -18,7 +18,7 @@ use App\Http\Controllers\ControleProdutos;
 
 // inserindo rotas para crud
 
-
+/*
 Route::delete('produtos/{id}', [ControleProdutos::class, 'destroy'])->name('produtos.destroy');
 Route::put('produtos/{id}/update', [ControleProdutos::class, 'update'])->name('produtos.update');
 Route::post('produtos', [ControleProdutos::class, 'index'])->name('produtos.index');
@@ -26,7 +26,11 @@ Route::get('produtos/{id}/edit', [ControleProdutos::class, 'edit'])->name('produ
 Route::get('produtos/create', [ControleProdutos::class, 'create'])->name('produtos.create');
 Route::get('produtos/{id}', [ControleProdutos::class, 'show'])->name('produtos.show');
 Route::get('produtos', [ControleProdutos::class, 'store'])->name('produtos.store');
+*/
 
+// do jeito mais facinho....
+
+Route::resource('produtos', ControleProdutos::class);
 
 Route::get('/', function () {
     return view('welcome');
