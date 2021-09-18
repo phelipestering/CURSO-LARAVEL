@@ -44,7 +44,21 @@ class ProductController extends Controller
      */
     public function store(Request $request)
     {
-        dd('cadastrando...');
+        // // dd($request->only(['name', 'description'])); voce escolhe os parametros que serão
+        // pegos no formulario
+        // // dd($request->all()); pega todos os arrays
+        //dd($request->has('name'));
+        //dd($request->except('name'));
+        if ($request->file('photo')->isValid()){
+            //dd($request->photo->extension()); - informa a extensao do arquivo
+            //dd($request->photo->getClientOriginalName()); - informa o nome original + a extensao do arquivo
+            //dd($request->file('photo')->store('produtos')); - armazena em diretorio criado - vide aula 33 em 10:46
+
+            // fazendo upload de arquivos dentro do laravel customizando o seu nome.... vide cod abaixo
+
+            $nameFile = $request -> name . '.' . $request -> photo -> extension();
+            dd($request->file('photo')->storeAs('produtos',$nameFile));
+        }
     }
 
     /**
