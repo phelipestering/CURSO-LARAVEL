@@ -44,11 +44,28 @@ class ProductController extends Controller
      */
     public function store(Request $request)
     {
+        // VALIDAÇÃO DE FORMULARIOS - AULA 6
+
+        $request -> validate([
+            'name' => 'required|min:3|max:255',
+            'description' => 'nullable|min:3|max:255',
+            'photo' => 'required|image',
+        ]);
+
+        dd('ok!');
+
+    //*****************************************************************************************************
+
+
+
         // // dd($request->only(['name', 'description'])); voce escolhe os parametros que serão
         // pegos no formulario
         // // dd($request->all()); pega todos os arrays
         //dd($request->has('name'));
         //dd($request->except('name'));
+
+        // fazendo upload de arquivos
+
         if ($request->file('photo')->isValid()){
             //dd($request->photo->extension()); - informa a extensao do arquivo
             //dd($request->photo->getClientOriginalName()); - informa o nome original + a extensao do arquivo
