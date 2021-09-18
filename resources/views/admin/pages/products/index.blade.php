@@ -6,6 +6,19 @@
 
 
         <h1> exibindo os produtos aqui</h1>
+        <a href="{{route('produtos.create')}}">Cadastrar Produtos</a>
+
+        @component ('admin.components.card')
+
+            @slot('title')
+                <h1>titulo slot</h1>
+            @endslot
+
+            um card exemplo
+
+        @include('admin.includes.alerts', ['content'=>'Alerta de produtos'])
+
+        <hr>
 
         @if ($teste === 'aui')
 
@@ -67,7 +80,7 @@
                 igual 1
                 @break
 
-            @case(123)
+            @case(2)
                 igual 2
 
                 @break
@@ -83,10 +96,14 @@
 
         @endswitch
 
-
-
-
 @endsection
 
+@push ('name')
+
+    <style>
+        .last {background:#CCC;}
+    </style>
+
+@endpush
 
 
