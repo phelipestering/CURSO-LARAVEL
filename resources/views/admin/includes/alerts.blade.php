@@ -1,5 +1,5 @@
 <div class="alert">
 
-    Alert - {{ $content}}
+   <p>Alert - {{ $content ?? ''}}</p>
 
 </div>
