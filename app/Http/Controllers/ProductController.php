@@ -5,24 +5,29 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 
 class ProductController extends Controller
+
 {
     /**
      * Display a listing of the resource.
      *
      * @return \Illuminate\Http\Response
      */
+
     public function index()
     {
-        $products = ['produto 01', 'produto 02', 'produto 03'];
-        return  $products;
+        $teste = '<h1>oii</h1>';
+        return view('admin.pages.products.index',compact('teste'));
     }
+
+
 
     /**
      * Show the form for creating a new resource.
      *
      * @return \Illuminate\Http\Response
      */
-    public function create()
+
+     public function create()
     {
         //
     }
@@ -47,7 +52,7 @@ class ProductController extends Controller
     public function show($id)
     {
 
-            return "exibindo o produto de id: {$id}";
+        return "exibindo o produto de id: {$id}";
 
     }
 
@@ -85,3 +90,4 @@ class ProductController extends Controller
         //
     }
 }
+

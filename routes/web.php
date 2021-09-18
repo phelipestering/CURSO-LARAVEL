@@ -40,8 +40,6 @@ esse comando cria controler com todas as rotas de crud necessarias
 
 
 
-
-
 */
 
 Route::get('/', function () {
