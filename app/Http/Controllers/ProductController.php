@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\StoreUpdateProductRequest;
 use Illuminate\Http\Request;
 
 class ProductController extends Controller
@@ -39,12 +40,14 @@ class ProductController extends Controller
     /**
      * Store a newly created resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
+     * @param  \Illuminate\Http\StoreUpdateProductRequest  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(StoreUpdateProductRequest $request)
     {
         // VALIDAÇÃO DE FORMULARIOS - AULA 6
+
+        /*
 
         $request -> validate([
             'name' => 'required|min:3|max:255',
@@ -53,7 +56,8 @@ class ProductController extends Controller
         ]);
 
         dd('ok!');
-
+        */
+        dd('ok!');
     //*****************************************************************************************************
 
 
