@@ -1,0 +1,22 @@
+tutorial de laradok
+
+https://www.youtube.com/watch?v=GienvDWdBmo&t=470s
+
+CONFIGURAÇÕES DO NGINX
+
+### NGINX #################################################
+
+NGINX_HOST_HTTP_PORT=3307
+NGINX_HOST_HTTPS_PORT=543
+NGINX_HOST_LOG_PATH=./logs/nginx/
+NGINX_SITES_PATH=./nginx/sites/
+NGINX_PHP_UPSTREAM_CONTAINER=php-fpm
+NGINX_PHP_UPSTREAM_PORT=9000
+NGINX_SSL_PATH=./nginx/ssl/
+
+PARA VERIFICAR QUAIS PORTAS ESTAO EM USO PELO  WINDOWS
+
+https://taskcenter.mega.com.br/hc/pt-br/articles/231463968-Como-descobrir-quais-aplica%C3%A7%C3%B5es-est%C3%A3o-se-comunicando-por-uma-porta-especifica-do-Windows
+
+
+
