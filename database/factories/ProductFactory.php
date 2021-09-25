@@ -1,8 +1,8 @@
- <?php
+<?php
 
 namespace Database\Factories;
 
-use App\Models\Products;
+use App\Models\Product;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
 
@@ -25,7 +25,7 @@ class ProductFactory extends Factory
         return [
             'name' => $this->faker->unique() -> word,
             'price' => 12.2,
-            'description' => $this->faker->usentence(),
+            'description' => $this->faker->unique() -> word,
 
         ];
     }
