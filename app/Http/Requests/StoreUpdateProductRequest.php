@@ -23,10 +23,14 @@ class StoreUpdateProductRequest extends FormRequest
      */
     public function rules()
     {
+
+        $id = $this-> segment(2);
+
         return [
-            'name' => 'required|min:3|max:255',
-            'description' => 'nullable|min:3|max:255',
-            'photo' => 'required|image',
+            'name' => "required|min:3|max:255|unique:products,name,{@id},id",
+            'description' => 'required|min:3|max:255',
+            'price' => 'required',
+            'image' => 'nullable|image',
         ];
     }
 
@@ -35,6 +39,7 @@ class StoreUpdateProductRequest extends FormRequest
         return [
             'name.required' => 'Nome é obrigatorio',
             'name.min' => 'Ops! Precisa informar ao menos 3 caracteres',
+            'photo.required' => 'Ops! Precisa informar uma imagem',
         ];
     }
 

@@ -6,15 +6,24 @@
 
 
         <h1> exibindo os produtos aqui</h1>
-        <a href="{{route('produtos.create')}}">Cadastrar Produtos</a>
+        <a href="{{route('produtos.create')}}" class="btn btn-primary">Cadastrar Produtos</a>
+
+        {{-- <form action="{{route('produtos.search')}}" method="POST" class="form form-inline">
+            @csrf
+            <input type="text" name="filter" id="" placeholder="Filtrar:" class="form-control">
+ --}}
+
+        </form>
+
 
         <hr>
 
-        <table border="1">
+        <table class="table table-dark">
             <thead>
                 <tr>
                     <th>Nome</th>
                     <th>Preço</th>
+                    <th>Descrição</th>
                     <th>Ações</th>
                 </tr>
             </thead>
@@ -23,16 +32,20 @@
                 <tr>
                     <td>{{ $product -> name }}</td>
                     <td>{{ $product -> price }}</td>
+                    <td>{{ $product -> description }}</td>
                     <td>
-                        <a href="">Detalhes</a>
+                        <a href="{{ route('produtos.show', $product->id)}}">Detalhes</a> <br>
+                        <a href="{{ route('produtos.edit', $product->id)}}">Editar o Produto</a>
                     </td>
+
                 </tr>
 
                 @endforeach
             </tbody>
         </table>
+        <hr>
 
-        {{-- {!! $products->link() !!} --}}
+        {!! $products -> links() !!}
 
 
 @endsection

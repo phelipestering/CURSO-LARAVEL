@@ -11,20 +11,30 @@
 
 {{-- adicionando mensagem de erro de validação de formularios - AULA 35 --}}
 
-@if ($errors->any())
-        <ul>
-            @foreach ($errors->all() as $error)
-                <li>{{ $error }}</li>
-            @endforeach
-        </ul>
-@endif
+    @include('admin.includes.alerts')
 
-        <form action="{{ route('produtos.store')}}" method="post" enctype="multipart/form-data">
+
+        <form action="{{ route('produtos.store')}}" method="post" enctype="multipart/form-data" class="form-group">
             @csrf
-            <input type="text" name="name" placeholder="Nome:" value="{{ old('name') }}">
-            <input type="text" name="description" placeholder="Descrição" value="{{ old('description')}}">>
-            <input type="file" name="photo" id="">
-            <button type="submit">Enviar</button>
+            <div class="form-group">
+                <input type="text" class="form-control" name="name" placeholder="Nome:" value="{{ old('name') }}">
+            </div>
+
+            <div class="form-group">
+                <input type="text" class="form-control" name="price" placeholder="Preço:" value="{{ old('price') }}">
+            </div>
+
+            <div class="form-group">
+                <input type="text" class="form-control" name="description" placeholder="Descrição" value="{{ old('description')}}">>
+            </div>
+
+            <div class="form-group">
+                <input type="file"class="form-control" name="image" id="">
+            </div>
+
+
+            <button type="submit" class="btn btn-success">Enviar</button>
+
 
         </form>
 

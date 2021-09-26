@@ -30,6 +30,8 @@ Route::get('produtos', [ControleProdutos::class, 'store'])->name('produtos.store
 
 // do jeito mais facinho....
 
+// Route::any('produtos/search', ProductController::class);
+
 Route::resource('produtos', ProductController::class);
 
 /*
